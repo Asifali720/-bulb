@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bulb</title>
+    <style>
+        body{
+            background: #000;
+        }
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 30%;
+        }
+        .btn{
+            padding: 15px;
+            border: 4px solid aqua;
+            background: transparent;
+            color: aqua;
+            border-radius: 30px;
+            font-weight: bolder;
+            width: 10%;
+        }
+    </style>
+</head>
+
+<body id="body">
+    <img src="images/bulb.png" alt="" class="center" id="bulb">
+    <button class="center btn" id="btn">Turn on</button>
+
+    <script>
+        const bulbBtn = document.getElementById('btn')
+        const bulb = document.getElementById('bulb')
+        const body = document.getElementById('body')
+        bulbBtn.addEventListener('click',toogleBulb)
+
+        function toogleBulb(e){
+            console.log(bulb.src)
+            if(bulb.src == 'http://127.0.0.1:5500/images/bulb.png'){
+            bulb.src = 'images/light-bulb.png'
+            bulbBtn.innerHTML = 'Turn off'
+            document.body.style.background = 'linear-gradient(to right, #f8cfcf, #ecec5d)';
+            }
+
+            else{
+                bulb.src = 'images/bulb.png'
+                bulbBtn.innerHTML = 'Turn on'
+                document.body.style.background = '#000';
+            }
+        }
+    </script>
+</body>
+
+</html>
